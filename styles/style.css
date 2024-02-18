@@ -495,12 +495,12 @@
   border-radius: 5px;
   background: rgb(29, 209, 0);
   color: rgb(255, 255, 255);
-font-family: 'Inter';
-font-size: 12px;
-font-weight: 700;
-line-height: 15px;
-letter-spacing: 0px;
-text-align: center;
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0px;
+  text-align: center;
 }
 .seat {
   display: flex;
