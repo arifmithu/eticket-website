@@ -198,7 +198,7 @@
   margin-left: 135px;
   margin-right: 135px;
   display: flex;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   border-radius: 24px;
   background: rgb(255, 255, 255);
 }
@@ -235,7 +235,6 @@
   margin-top: 24px;
   border-radius: 24px;
   width: 710px;
-
   background: rgb(247, 248, 248);
 }
 .route {
@@ -318,11 +317,291 @@
   color: rgb(3, 7, 18);
 }
 .ticket-price p {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-size: 24px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0px;
   text-align: center;
   color: rgba(3, 7, 18, 0.6);
+}
+
+/* choose your seat styles */
+.choose-seat {
+  background: rgb(247, 248, 248);
+  padding-bottom: 120px;
+}
+.seat-container {
+  display: flex;
+  margin-left: 135px;
+  margin-right: 135px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 24px;
+  margin-top: 26px;
+}
+.left {
+  padding-top: 32px;
+  padding-left: 32px;
+  width: 610px;
+}
+.seat-selection {
+  display: flex;
+  justify-content: space-between;
+}
+.left h1 {
+  color: rgb(3, 7, 18);
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0px;
+  margin-bottom: 23px;
+}
+.dashed-border {
+  border-bottom: 2px dashed rgba(3, 7, 18, 0.2);
+  border-top: none;
+}
+.seat-selection {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.gray-seat {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.gray-seat p {
+  color: rgba(3, 7, 18, 0.5);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.green-seat {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.green-seat p {
+  color: rgb(29, 209, 0);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.all-seats {
+  width: 100%;
+  margin-top: 20px;
+  padding-bottom: 32px;
+}
+.engine-row .steering {
+  width: 120px;
+  /* height: 50px; */
+  margin-left: 470px;
+  padding: 16px 43px;
+  border-radius: 12px;
+  background: rgba(3, 7, 18, 0.1);
+}
+.row1 {
+  display: flex;
+  gap: 26px;
+  margin-top: 24px;
+}
+.row {
+  display: flex;
+  gap: 50px;
+}
+.left-row,
+.right-row {
+  display: flex;
+  width: 252px;
+  justify-content: space-between;
+}
+.line {
+  padding: 17px 0px 17px 0;
+  color: rgba(3, 7, 18, 0.5);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.left-row button,
+.right-row button {
+  padding: 17px 44px;
+  border-radius: 12px;
+  background: rgb(247, 248, 248);
+  color: rgba(3, 7, 18, 0.5);
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.vertical-border {
+  border-left: 2px dashed rgba(3, 7, 18, 0.2);
+  margin: 32px;
+}
+
+.right h1 {
+  color: rgb(3, 7, 18);
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0px;
+  margin-bottom: 23px;
+}
+.right {
+  padding-top: 32px;
+  width: 100%;
+  margin-right: 32px;
+}
+.border,
+.border1 {
+  border-bottom: 2px dashed rgba(3, 7, 18, 0.2);
+  border-top: none;
+  margin-bottom: 25px;
+}
+.border1 {
+  margin: 0 24px;
+}
+.total-seat {
+  border-radius: 12px;
+  background: rgb(247, 248, 248);
+}
+.title {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16px;
+  padding-top: 32px;
+}
+.title p {
+  color: rgb(3, 7, 18);
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.seat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+.selected-seats {
+  margin-top: 16px;
+}
+.bottom-border1 {
+  border: 1px solid rgba(3, 7, 18, 0.2);
+  margin: 16px 24px 0 24px;
+}
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+.total-amount p {
+  color: rgb(3, 7, 18);
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.coupon-input {
+  display: flex;
+  gap: 20px;
+  border-radius: 12px;
+  background: rgb(255, 255, 255);
+  margin: 0 24px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.coupon-input input {
+  width: 131px;
+  padding-left: 5px;
+  font-size: 14px;
+  color: rgba(3, 7, 18, 0.4);
+  font-family: "Inter";
+}
+.coupon-input button{
+    border-radius: 8px;
+background: rgb(29, 209, 0);
+padding: 11px 15px;
+color: rgb(255, 255, 255);
+font-family: 'Inter';
+font-size: 16px;
+font-weight: 600;
+line-height: 19px;
+letter-spacing: 0px;
+text-align: left;
+}
+
+.passenger-info h2{
+    color: rgb(3, 7, 18);
+font-family: 'Inter';
+font-size: 16px;
+font-weight: 600;
+line-height: 19px;
+letter-spacing: 0px;
+text-align: left;
+margin-top: 24px;
+margin-bottom: 16px;
+}
+.passenger-info input{
+    box-sizing: border-box;
+border: 1px solid rgba(3, 7, 18, 0.1);
+border-radius: 12px;
+width: 300px;
+padding: 16px 24px;
+}
+.submit{
+    color: rgb(255, 255, 255);
+font-family: Raleway;
+font-size: 20px;
+font-weight: 800;
+line-height: 23px;
+letter-spacing: 0px;
+text-align: center;
+border-radius: 16px;
+background: rgb(29, 209, 0);
+width: 100%;
+height: 65px;
+margin-top: 24px;
+}
+.link{
+    display: flex;
+    gap: 20px;
+    margin-top: 24px;
+}
+.link a{
+    color: rgba(3, 7, 18, 0.6);
+font-family: 'Inter';
+font-size: 14px;
+font-weight: 400;
+line-height: 19px;
+letter-spacing: 0px;
+text-align: left;
+text-decoration: none;
+}
+
+/* footer style  */
+footer{
+    margin: 120px 135px;
+}
+.footer-top{
+    display: flex;
+    justify-content: space-between;
 }
