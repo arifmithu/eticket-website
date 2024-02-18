@@ -51,21 +51,21 @@
   border: none;
 }
 
-.info-container{
-    display: flex;
-    gap: 23px;
-    margin-top: 46px;
-    justify-content: center;
+.info-container {
+  display: flex;
+  gap: 23px;
+  margin-top: 46px;
+  justify-content: center;
 }
 .card-container {
-    box-sizing: border-box;
-    border-bottom: 3px solid rgb(29, 209, 0);
-    border-radius: 24px;
-    background: rgb(255, 255, 255);
-    width: 250px;
-    height: 138px;
-    justify-content: center;
-  }
+  box-sizing: border-box;
+  border-bottom: 3px solid rgb(29, 209, 0);
+  border-radius: 24px;
+  background: rgb(255, 255, 255);
+  width: 250px;
+  height: 138px;
+  justify-content: center;
+}
 #card-head {
   color: rgb(3, 7, 18);
   font-family: Inter;
@@ -85,3 +85,80 @@
   text-align: left;
 }
 
+/* offer section styles */
+.offer-section {
+  width: 100%;
+}
+.offer-section .offer-heading {
+  margin: 120px auto 48px auto;
+  width: 100%;
+  text-align: center;
+  color: rgb(3, 7, 18);
+  font-family: Raleway;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 47px;
+  letter-spacing: 0px;
+}
+.offer {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 62px;
+}
+.offer-container1,
+.offer-container2 {
+  position: relative;
+}
+.divider {
+  position: absolute;
+  top: 86px;
+  left: 245px;
+}
+.rectangle,
+.rectangle2 {
+  display: flex;
+  justify-content: space-around;
+  width: 484px;
+  height: 220px;
+  border-radius: 24px;
+  background: rgb(255, 191, 15);
+}
+.discount h1 {
+  font-family: "Inter";
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 36px;
+  letter-spacing: 0px;
+  padding-top: 52px;
+}
+.discount h4 {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0px;
+}
+.discount p {
+  font-family: "inter";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 36px;
+  color: rgba(3, 7, 18, 0.5);
+}
+.coupon h1 {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0px;
+  padding-top: 66px;
+}
+.coupon p {
+  font-family: "Raleway";
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0px;
+  color: rgba(3, 7, 18, 0.4);
+}
+.rectangle2 {
+  background: rgb(247, 140, 156);
+}
