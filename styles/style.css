@@ -1,6 +1,6 @@
 /* banner section styles */
 .banner {
-  background: url(/images/banner.png);
+  background: url("/images/banner.png");
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: 47px;
@@ -88,6 +88,7 @@
 /* offer section styles */
 .offer-section {
   width: 100%;
+  margin-bottom: 120px;
 }
 .offer-section .offer-heading {
   margin: 120px auto 48px auto;
@@ -161,4 +162,167 @@
 }
 .rectangle2 {
   background: rgb(247, 140, 156);
+}
+
+/* booking section styles */
+.booking-section {
+  box-sizing: border-box;
+  border-top: 2px solid rgb(29, 209, 0);
+  border-radius: 88px 88px 0px 0px;
+  background: rgb(247, 248, 248);
+}
+.booking-header h1 {
+  color: rgb(3, 7, 18);
+  font-family: "Raleway";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 47px;
+  letter-spacing: 0px;
+  text-align: center;
+  padding-top: 65px;
+  margin-bottom: 24px;
+}
+.booking-header p {
+  color: rgba(3, 7, 18, 0.6);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: center;
+  width: 736px;
+  margin: 0 auto 0 auto;
+  margin-bottom: 48px;
+}
+.schedule-container {
+  margin-left: 135px;
+  margin-right: 135px;
+  display: flex;
+  border: 2px solid red;
+  border-radius: 24px;
+  background: rgb(255, 255, 255);
+}
+.transport {
+  display: flex;
+  margin-left: 32px;
+  gap: 14px;
+}
+.schedule .top-container {
+  display: flex;
+  padding-top: 44px;
+}
+.details h1 {
+  color: rgb(3, 7, 18);
+  font-family: "Raleway";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-right: 233px;
+}
+.details p {
+  color: rgba(3, 7, 18, 0.6);
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.route-details {
+  margin-left: 32px;
+  margin-top: 24px;
+  border-radius: 24px;
+  width: 710px;
+
+  background: rgb(247, 248, 248);
+}
+.route {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 32px;
+  padding-top: 32px;
+}
+.dotted-border {
+  border-bottom: 2px dashed rgba(3, 7, 18, 0.2);
+  border-top: none;
+  margin: 23px 32px;
+}
+.route h4,
+.time h4 {
+  color: rgba(3, 7, 18, 0.6);
+  font-family: "Raleway";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.route h3,
+.time h3 {
+  padding-right: 32px;
+  color: rgb(3, 7, 18);
+  font-family: "Raleway";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.time {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 32px;
+}
+.boarding-point {
+  display: flex;
+  gap: 24px;
+  margin: 0 30px;
+  padding-bottom: 32px;
+}
+.point1,
+.point2,
+.duration {
+  padding: 19px 17px 18px 16px;
+  border-radius: 12px;
+  background: rgba(3, 7, 18, 0.05);
+  color: rgba(3, 7, 18, 0.8);
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-wrap: nowrap;
+}
+
+.price-divider {
+  border: 2px dashed rgba(3, 7, 18, 0.2);
+  margin-left: -30px;
+}
+.ticket-price {
+  height: 100%;
+  margin: auto auto;
+}
+.ticket-price img {
+  margin: 0 auto;
+}
+.ticket-price h1 {
+  font-family: "Raleway";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: rgb(3, 7, 18);
+}
+.ticket-price p {
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: rgba(3, 7, 18, 0.6);
 }

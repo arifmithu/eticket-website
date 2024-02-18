@@ -18,8 +18,8 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="mx-[134px]">
-    <header>
+  <body>
+    <header class="mx-[134px]">
       <div class="flex items-center justify-between mt-12">
         <div class="">
           <a class="text-4xl font-extrabold">E-Ticket</a>
@@ -43,7 +43,7 @@
       </div>
     </header>
     <main class="">
-      <div class="banner">
+      <div class="banner mx-[134px]">
         <div class="banner-header">
           <h1 id="banner-text1">End-to-End Travel with</h1>
           <h1 id="banner-text2" class="paribahan">AHM Paribahan</h1>
@@ -91,7 +91,7 @@
       <!-- offer section -->
       <section class="offer-section">
         <h1 class="offer-heading">Best offers for you!</h1>
-        <div class="offer">
+        <div class="offer mx-[134px]">
           <!-- offer 1 -->
           <div class="offer-container1">
             <div class="divide">
@@ -113,9 +113,9 @@
           </div>
           <!-- offer 2 -->
           <div class="offer-container2">
-              <div class="divider">
-                <img src="images/cupon-devider.png" alt="" />
-              </div>
+            <div class="divider">
+              <img src="images/cupon-devider.png" alt="" />
+            </div>
             <div class="rectangle2">
               <div class="discount">
                 <h1>20% OFF</h1>
@@ -132,8 +132,71 @@
         <div class="flex items-center justify-center gap-3 text-xl">
           <button
             class="btn btn-primary text-[#1DD100] font-bold font-['Raleway'] bg-white border-green-500"
-          >See All Offers
+          >
+            See All Offers
           </button>
+        </div>
+      </section>
+
+      <!-- booking section -->
+
+      <section class="booking-section">
+        <div class="booking-header">
+          <h1>AHM Paribahan</h1>
+          <p>
+            Top transport Company in the country with a huge number of trusted
+            partners and largest passengers community.
+          </p>
+        </div>
+        <div class="schedule-container ">
+          <div class="schedule">
+            <!-- top container -->
+            <div class="top-container">
+              <div class="transport">
+                <img src="images/bus-logo.png" alt="" />
+                <div class="details">
+                  <h1>AHM Paribahan</h1>
+                  <p>Coach-1637 ! AC/Business</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 mr-12 text-xl">
+                <button
+                  class="btn btn-primary text-[#1DD100] bg-green-200 border-green-500"
+                >
+                <img src="images/seat-green.png" alt="" />
+                  <span>40</span> Seats left
+                </button>
+              </div>
+            </div>
+
+            <!-- route details -->
+            
+            <div class="route-details">
+              <div class="route">
+                <h4>Route</h4>
+              <h3>Dhaka-Sylhet</h3>
+              </div>
+              <hr class="dotted-border">
+              <div class="time">
+                <h4>Departure Time</h4>
+                <h3>9:00 PM</h3>
+              </div>
+              <hr class="dotted-border">
+              <div class="boarding-point">
+                <p class="point1">Boarding Point- Laxmipur</p>
+                <p class="point2">Boarding Point- Bogura</p>
+                <p class="duration">Est. Time-11 hours</p>
+              </div>
+            </div>
+          </div>
+          <div class="price-divider">
+            <img src="images/info-devider.png" alt="">
+          </div>
+          <div class="ticket-price">
+            <img src="images/fare.png" alt="">
+            <h1>550 Taka</h1>
+            <p>Per Seat</p>
+          </div>
         </div>
       </section>
     </main>
