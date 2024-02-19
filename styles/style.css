@@ -1,9 +1,10 @@
 /* banner section styles */
 .banner {
-  background: url("/images/banner.png");
+  background: url("../images/banner.png");
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: 47px;
+  margin: 30px 135px;
 }
 .banner-header {
   padding-top: 50px;
@@ -503,8 +504,8 @@
   text-align: center;
 }
 .seat {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   padding: 0 32px;
   color: rgba(3, 7, 18, 0.6);
   font-family: "Inter";
