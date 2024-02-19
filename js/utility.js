@@ -1,46 +1,103 @@
-function scrollToSeatSelection(){
-    window.scrollTo(0,2000);
+function scrollToSeatSelection() {
+  window.scrollTo(0, 2000);
 }
 
-function seatSelected(elementId){
-    const element = document.getElementById(elementId);
-    const allStyle = window.getComputedStyle(element);
-    const currentBackgroundColor = allStyle.backgroundColor;
-    const totalSeatElement = document.getElementById('seat-left');
-    const totalSeat = totalSeatElement.innerText;
-    const seatSelectedElement = document.getElementById('total-seat-selected');
-    const seatSelected = seatSelectedElement.innerText;
-    const selectedSeatValue = element.innerText;
-    const appendSelectedSeat = document.getElementById("seat");
+function seatSelected(elementId) {
+  const element = document.getElementById(elementId);
+  const allStyle = window.getComputedStyle(element);
+  const currentBackgroundColor = allStyle.backgroundColor;
+  const totalSeatElement = document.getElementById("seat-left");
+  const totalSeat = totalSeatElement.innerText;
+  const seatSelectedElement = document.getElementById("total-seat-selected");
+  const seatSelected = seatSelectedElement.innerText;
+  const numberOfSeats = parseInt(seatSelected);
+  const selectedSeatValue = element.innerText;
+  const appendSelectedSeat = document.getElementById("seat");
 
-    const newSeat = document.createElement('div');
-    newSeat.setAttribute('id', element.innerText+1);
-    newSeat.innerHTML = '<p>' + selectedSeatValue + '</p>' + '<p>Economy</p>' + '<p>550</p>';
-
-    console.log(currentBackgroundColor,totalSeat,seatSelected);
-    if(currentBackgroundColor !== 'rgb(29, 209, 0)'){
-        element.style.backgroundColor = 'rgb(29, 209, 0)';
-        element.style.color = 'rgb(255, 255, 255)';
-        document.getElementById('seat-left').innerText = parseInt(totalSeat) - 1;
-        document.getElementById('total-seat-selected').innerText = parseInt(seatSelected) + 1;
-        appendSelectedSeat.appendChild(newSeat);
-        newSeat.style.display = "flex";
-        newSeat.style.gap = "60px";
-        const grossTotal = document.getElementById('gross-total');
-        grossTotal.innerText = document.getElementById('total-seat-selected').innerText * 550;
+  const newSeat = document.createElement("div");
+  newSeat.setAttribute("id", element.innerText + 1);
+  newSeat.innerHTML =
+    "<p>" + selectedSeatValue + "</p>" + "<p>Economy</p>" + "<p>550</p>";
+  if (currentBackgroundColor !== "rgb(29, 209, 0)" && numberOfSeats < 4) {
+    element.style.backgroundColor = "rgb(29, 209, 0)";
+    element.style.color = "rgb(255, 255, 255)";
+    document.getElementById("seat-left").innerText = parseInt(totalSeat) - 1;
+    document.getElementById("total-seat-selected").innerText =
+      parseInt(seatSelected) + 1;
+    appendSelectedSeat.appendChild(newSeat);
+    newSeat.style.display = "flex";
+    newSeat.style.gap = "60px";
+    const grossTotal = document.getElementById("gross-total");
+    grossTotal.innerText =
+      document.getElementById("total-seat-selected").innerText * 550;
+  } 
+  else {
+    if(numberOfSeats >= 4){
+        if(currentBackgroundColor == "rgb(29, 209, 0)"){
+            element.style.backgroundColor = "rgb(247, 248, 248)";
+    element.style.color = "rgba(3, 7, 18, 0.5)";
+    document.getElementById("seat-left").innerText = parseInt(totalSeat) + 1;
+    document.getElementById("total-seat-selected").innerText =
+      parseInt(seatSelected) - 1;
+    const grossTotal = document.getElementById("gross-total");
+    grossTotal.innerText =
+      document.getElementById("total-seat-selected").innerText * 550;
+        }
     }
     else{
-        element.style.backgroundColor = 'rgb(247, 248, 248)';
-        element.style.color = 'rgba(3, 7, 18, 0.5)';
-        document.getElementById('seat-left').innerText = parseInt(totalSeat) + 1;
-        document.getElementById('total-seat-selected').innerText = parseInt(seatSelected) - 1;
-        const grossTotal = document.getElementById('gross-total');
-        grossTotal.innerText = document.getElementById('total-seat-selected').innerText * 550;
+        element.style.backgroundColor = "rgb(247, 248, 248)";
+    element.style.color = "rgba(3, 7, 18, 0.5)";
+    document.getElementById("seat-left").innerText = parseInt(totalSeat) + 1;
+    document.getElementById("total-seat-selected").innerText =
+      parseInt(seatSelected) - 1;
+    const grossTotal = document.getElementById("gross-total");
+    grossTotal.innerText =
+      document.getElementById("total-seat-selected").innerText * 550;
     }
+  }
 }
 
-function getCouponCode(){
-    const element = document.getElementById('coupon-code');
-    const coupon = element.value;
-    console.log(coupon);
+// use coupon code
+
+function getCouponCode() {
+  const element = document.getElementById("coupon-code");
+  const coupon = element.value;
+  const selectedSeatElement = document.getElementById('total-seat-selected');
+  const totalSeatText = selectedSeatElement.innerText;
+  const totalSeat = parseInt(totalSeatText);
+  const grossTotalElement = document.getElementById("gross-total");
+  const grossTotal = parseInt(grossTotalElement.innerText);
+  
+  if (coupon == "NEW15" && totalSeat >= 4) {
+    document.getElementById("grand-total").innerText = grossTotal - grossTotal * 0.15;
+    const discountdiv = document.createElement('div');
+    discountdiv.setAttribute('id', 'discount');
+    discountdiv.innerHTML = "<p> Discount </p>" + "<p>" + grossTotal* 0.15 + "</p>";
+    discountdiv.style.display= 'flex';
+    discountdiv.style.justifyContent = 'space-between';
+    discountdiv.style.marginLeft = '24px';
+    discountdiv.style.marginRight = '24px';
+    discountdiv.style.fontWeight = '500';
+    const totallNDiscountParentDiv =document.getElementById('toalnDiscount');
+    totallNDiscountParentDiv.appendChild(discountdiv);
+    const inputFieldtElement = document.getElementById('coupon-input');
+    inputFieldtElement.classList.add('hidden');
+    
+  }
+  else if (coupon == "Couple 20" && totalSeat >= 4) {
+    document.getElementById("grand-total").innerText = grossTotal - grossTotal * 0.20;
+    const discountdiv = document.createElement('div');
+    discountdiv.setAttribute('id', 'discount');
+    discountdiv.innerHTML = "<p> Discount </p>" + "<p>" + grossTotal* 0.20 + "</p>";
+    discountdiv.style.display= 'flex';
+    discountdiv.style.justifyContent = 'space-between';
+    discountdiv.style.marginLeft = '24px';
+    discountdiv.style.marginRight = '24px';
+    discountdiv.style.fontWeight = '500';
+    const totallNDiscountParentDiv =document.getElementById('toalnDiscount');
+    totallNDiscountParentDiv.appendChild(discountdiv);
+    const inputFieldtElement = document.getElementById('coupon-input');
+    inputFieldtElement.classList.add('hidden');
+  }
+  else {}
 }
