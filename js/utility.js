@@ -30,6 +30,7 @@ function seatSelected(elementId) {
     const grossTotal = document.getElementById("gross-total");
     grossTotal.innerText =
       document.getElementById("total-seat-selected").innerText * 550;
+      document.getElementById('grand-total').innerText = document.getElementById("total-seat-selected").innerText * 550;
   } 
   else {
     if(numberOfSeats >= 4){
@@ -99,5 +100,18 @@ function getCouponCode() {
     const inputFieldtElement = document.getElementById('coupon-input');
     inputFieldtElement.classList.add('hidden');
   }
-  else {}
+  else {
+    const discountdiv = document.createElement('div');
+    discountdiv.setAttribute('id', 'discount');
+    discountdiv.innerHTML = "<p> Discount </p>" + "<p>" + 0 + "</p>";
+    discountdiv.style.display= 'flex';
+    discountdiv.style.justifyContent = 'space-between';
+    discountdiv.style.marginLeft = '24px';
+    discountdiv.style.marginRight = '24px';
+    discountdiv.style.fontWeight = '500';
+    const totallNDiscountParentDiv =document.getElementById('toalnDiscount');
+    totallNDiscountParentDiv.appendChild(discountdiv);
+    const inputFieldtElement = document.getElementById('coupon-input');
+    // inputFieldtElement.classList.add('hidden');
+  }
 }

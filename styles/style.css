@@ -688,3 +688,60 @@ footer {
   letter-spacing: 0px;
   text-align: left;
 }
+.modal1{
+  text-align: center;
+  margin-left: 350px;
+  justify-content: center;
+  /* border: 2px solid red; */
+}
+figure img {
+  width: 100px;
+}
+.success {
+  color: rgb(39, 174, 96);
+  font-family: "Raleway";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  border: 2px dashed rgba(3, 7, 18, 0.3);
+}
+.success-description1{
+  color: rgb(3, 7, 18);
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-top: 24px;
+}
+.success-description2 {
+  color: rgb(3, 7, 18);
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-top: 0px;
+}
+.confirmation-email{
+  color: rgba(3, 7, 18, 0.6);
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  margin-bottom: 48px;
+}
+.card-actions .btn{
+  border-radius: 32px;
+background: rgb(39, 174, 96);
+width: 300px;
+}

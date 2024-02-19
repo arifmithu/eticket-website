@@ -159,7 +159,7 @@
                 <img src="images/bus-logo.png" alt="" />
                 <div class="details">
                   <h1>AHM Paribahan</h1>
-                  <p>Coach-1637 ! AC/Business</p>
+                  <p>Coach-1637 ! AC_Business</p>
                 </div>
               </div>
               <div class="flex items-center gap-3 mr-12 text-xl">
@@ -177,7 +177,7 @@
             <div class="route-details">
               <div class="route">
                 <h4>Route</h4>
-                <h3>Dhaka-Sylhet</h3>
+                <h3>Dhaka-Bogura</h3>
               </div>
               <hr class="dotted-border" />
               <div class="time">
@@ -186,8 +186,8 @@
               </div>
               <hr class="dotted-border" />
               <div class="boarding-point">
-                <p class="point1">Boarding Point- Laxmipur</p>
-                <p class="point2">Boarding Point- Bogura</p>
+                <p class="point1">Boarding Point- Cumilla</p>
+                <p class="point2">Dropping Point- Bogura</p>
                 <p class="duration">Est. Time-11 hours</p>
               </div>
             </div>
@@ -405,11 +405,11 @@
               </div>
               <div class="passenger-info">
                 <h2>Passengers Name*</h2>
-              <input type="text" placeholder="Enter your name">
+              <input type="text" placeholder="Enter your name" required>
               <h2>Phone Number*</h2>
-              <input type="text" placeholder="Enter your phone number">
+              <input type="number" placeholder="Enter your phone number" required>
               <h2>Email Id</h2>
-              <input type="email" placeholder="Enter your email id">
+              <input type="email" placeholder="Enter your email id" required>
               </div>
               <button class="submit">Next</button>
               <div class="link">
@@ -419,6 +419,22 @@
             </div>
           </div>
         </section>
+      </section>
+      <section class="hidden  modal1">
+        <div class="shadow-xl card w-[600px] ">
+          <figure class="flex flex-col gap-4 px-10 pt-10">
+            <img src="./images/check-removebg-preview.png" alt="ok sign" class="rounded-xl" />
+            <p class="success">SUCCESS</p>
+          </figure>
+          <div class="items-center text-center card-body">
+            <p class="success-description1">Thank you for choosing us.</p>
+            <p class="success-description2">We are working hard to provide best service and deals for you.</p>
+            <p class="confirmation-email">Shortly you will find a confirmation email.</p>
+            <div class="card-actions">
+              <button class="btn">Continue</button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
