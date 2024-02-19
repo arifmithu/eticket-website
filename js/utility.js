@@ -30,31 +30,59 @@ function seatSelected(elementId) {
     const grossTotal = document.getElementById("gross-total");
     grossTotal.innerText =
       document.getElementById("total-seat-selected").innerText * 550;
-      document.getElementById('grand-total').innerText = document.getElementById("total-seat-selected").innerText * 550;
-  } 
-  else {
-    if(numberOfSeats >= 4){
-        if(currentBackgroundColor == "rgb(29, 209, 0)"){
-            element.style.backgroundColor = "rgb(247, 248, 248)";
-    element.style.color = "rgba(3, 7, 18, 0.5)";
-    document.getElementById("seat-left").innerText = parseInt(totalSeat) + 1;
-    document.getElementById("total-seat-selected").innerText =
-      parseInt(seatSelected) - 1;
-    const grossTotal = document.getElementById("gross-total");
-    grossTotal.innerText =
+    document.getElementById("grand-total").innerText =
       document.getElementById("total-seat-selected").innerText * 550;
-        }
-    }
-    else{
+  } else {
+    if (numberOfSeats >= 4) {
+      if (currentBackgroundColor == "rgb(29, 209, 0)") {
         element.style.backgroundColor = "rgb(247, 248, 248)";
-    element.style.color = "rgba(3, 7, 18, 0.5)";
-    document.getElementById("seat-left").innerText = parseInt(totalSeat) + 1;
-    document.getElementById("total-seat-selected").innerText =
-      parseInt(seatSelected) - 1;
-    const grossTotal = document.getElementById("gross-total");
-    grossTotal.innerText =
-      document.getElementById("total-seat-selected").innerText * 550;
+        element.style.color = "rgba(3, 7, 18, 0.5)";
+        document.getElementById("seat-left").innerText =
+          parseInt(totalSeat) + 1;
+        document.getElementById("total-seat-selected").innerText =
+          parseInt(seatSelected) - 1;
+        const grossTotal = document.getElementById("gross-total");
+        grossTotal.innerText =
+          document.getElementById("total-seat-selected").innerText * 550;
+        const child = document.getElementById(element.innerText + 1);
+        const targetDiv = document.getElementById("seat");
+        console.log(child, targetDiv);
+        targetDiv.removeChild(child);
+      }
+    } else {
+      element.style.backgroundColor = "rgb(247, 248, 248)";
+      element.style.color = "rgba(3, 7, 18, 0.5)";
+      document.getElementById("seat-left").innerText = parseInt(totalSeat) + 1;
+      document.getElementById("total-seat-selected").innerText =
+        parseInt(seatSelected) - 1;
+      const grossTotal = document.getElementById("gross-total");
+      grossTotal.innerText =
+        document.getElementById("total-seat-selected").innerText * 550;
+      const child = document.getElementById(element.innerText + 1);
+      const targetDiv = document.getElementById("seat");
+      console.log(child, targetDiv);
+      targetDiv.removeChild(child);
     }
+  }
+  handleCouponCodeChange();
+}
+// enable apply button
+function handleCouponCodeChange() {
+    console.log('hello')
+  const couponInputField = document.getElementById("coupon-code");
+  const couponValue = couponInputField.value;
+  const seatSelectedElement = document.getElementById("total-seat-selected");
+  const seatSelected = seatSelectedElement.innerText;
+  const numberOfSeats = parseInt(seatSelected);
+  if (numberOfSeats >= 4 && couponValue != "") {
+    document.getElementById("apply-coupon").disabled = false;
+    const button = document.getElementById('apply-coupon');
+    button.style.backgroundColor = 'rgb(29, 209, 0)';
+    console.log(document.getElementById("apply-coupon").disabled)
+  } else {
+    document.getElementById("apply-coupon").disabled = true;
+    document.getElementById('apply-coupon').style.background = 'rgba(3, 7, 18, 0.1)';
+    console.log(document.getElementById("apply-coupon").disabled)
   }
 }
 
@@ -63,91 +91,90 @@ function seatSelected(elementId) {
 function getCouponCode() {
   const element = document.getElementById("coupon-code");
   const coupon = element.value;
-  const selectedSeatElement = document.getElementById('total-seat-selected');
+  const selectedSeatElement = document.getElementById("total-seat-selected");
   const totalSeatText = selectedSeatElement.innerText;
   const totalSeat = parseInt(totalSeatText);
   const grossTotalElement = document.getElementById("gross-total");
   const grossTotal = parseInt(grossTotalElement.innerText);
-  
+
   if (coupon == "NEW15" && totalSeat >= 4) {
-    document.getElementById("grand-total").innerText = grossTotal - grossTotal * 0.15;
-    const discountdiv = document.createElement('div');
-    discountdiv.setAttribute('id', 'discount');
-    discountdiv.innerHTML = "<p> Discount </p>" + "<p>" + grossTotal* 0.15 + "</p>";
-    discountdiv.style.display= 'flex';
-    discountdiv.style.justifyContent = 'space-between';
-    discountdiv.style.marginLeft = '24px';
-    discountdiv.style.marginRight = '24px';
-    discountdiv.style.fontWeight = '500';
-    const totallNDiscountParentDiv =document.getElementById('toalnDiscount');
+    document.getElementById("grand-total").innerText =
+      grossTotal - grossTotal * 0.15;
+    const discountdiv = document.createElement("div");
+    discountdiv.setAttribute("id", "discount");
+    discountdiv.innerHTML =
+      "<p> Discount </p>" + "<p>" + grossTotal * 0.15 + "</p>";
+    discountdiv.style.display = "flex";
+    discountdiv.style.justifyContent = "space-between";
+    discountdiv.style.marginLeft = "24px";
+    discountdiv.style.marginRight = "24px";
+    discountdiv.style.fontWeight = "500";
+    const totallNDiscountParentDiv = document.getElementById("toalnDiscount");
     totallNDiscountParentDiv.appendChild(discountdiv);
-    const inputFieldtElement = document.getElementById('coupon-input');
-    inputFieldtElement.classList.add('hidden');
-    
-  }
-  else if (coupon == "Couple 20" && totalSeat >= 4) {
-    document.getElementById("grand-total").innerText = grossTotal - grossTotal * 0.20;
-    const discountdiv = document.createElement('div');
-    discountdiv.setAttribute('id', 'discount');
-    discountdiv.innerHTML = "<p> Discount </p>" + "<p>" + grossTotal* 0.20 + "</p>";
-    discountdiv.style.display= 'flex';
-    discountdiv.style.justifyContent = 'space-between';
-    discountdiv.style.marginLeft = '24px';
-    discountdiv.style.marginRight = '24px';
-    discountdiv.style.fontWeight = '500';
-    const totallNDiscountParentDiv =document.getElementById('toalnDiscount');
+    const inputFieldtElement = document.getElementById("coupon-input");
+    inputFieldtElement.classList.add("hidden");
+  } else if (coupon == "Couple 20" && totalSeat >= 4) {
+    document.getElementById("grand-total").innerText =
+      grossTotal - grossTotal * 0.2;
+    const discountdiv = document.createElement("div");
+    discountdiv.setAttribute("id", "discount");
+    discountdiv.innerHTML =
+      "<p> Discount </p>" + "<p>" + grossTotal * 0.2 + "</p>";
+    discountdiv.style.display = "flex";
+    discountdiv.style.justifyContent = "space-between";
+    discountdiv.style.marginLeft = "24px";
+    discountdiv.style.marginRight = "24px";
+    discountdiv.style.fontWeight = "500";
+    const totallNDiscountParentDiv = document.getElementById("toalnDiscount");
     totallNDiscountParentDiv.appendChild(discountdiv);
-    const inputFieldtElement = document.getElementById('coupon-input');
-    inputFieldtElement.classList.add('hidden');
-  }
-  else {
-    const discountdiv = document.createElement('div');
-    discountdiv.setAttribute('id', 'discount');
+    const inputFieldtElement = document.getElementById("coupon-input");
+    inputFieldtElement.classList.add("hidden");
+  } else {
+    const discountdiv = document.createElement("div");
+    discountdiv.setAttribute("id", "discount");
     discountdiv.innerHTML = "<p> Discount </p>" + "<p>" + 0 + "</p>";
-    discountdiv.style.display= 'flex';
-    discountdiv.style.justifyContent = 'space-between';
-    discountdiv.style.marginLeft = '24px';
-    discountdiv.style.marginRight = '24px';
-    discountdiv.style.fontWeight = '500';
-    const totallNDiscountParentDiv =document.getElementById('toalnDiscount');
+    discountdiv.style.display = "flex";
+    discountdiv.style.justifyContent = "space-between";
+    discountdiv.style.marginLeft = "24px";
+    discountdiv.style.marginRight = "24px";
+    discountdiv.style.fontWeight = "500";
+    const totallNDiscountParentDiv = document.getElementById("toalnDiscount");
     totallNDiscountParentDiv.appendChild(discountdiv);
-    const inputFieldtElement = document.getElementById('coupon-input');
-    // inputFieldtElement.classList.add('hidden');
+    const inputFieldtElement = document.getElementById("coupon-input");
+    inputFieldtElement.classList.add('hidden');
   }
 }
 
 // next button function
 
-function next(){
-    const element1 = document.getElementById('header');
-    element1.classList.add('hidden');
-    const element2 = document.getElementById('banner');
-    element2.classList.add('hidden');
-    const element3 = document.getElementById('offer');
-    element3.classList.add('hidden');
-    const element4 = document.getElementById('booking');
-    element4.classList.add('hidden');
-    const element6 = document.getElementById('footer');
-    element6.classList.add('hidden');
-    const element5 = document.getElementById('modal1');
-    element5.classList.remove('hidden');
-    
+function next() {
+  const element1 = document.getElementById("header");
+  element1.classList.add("hidden");
+  const element2 = document.getElementById("banner");
+  element2.classList.add("hidden");
+  const element3 = document.getElementById("offer");
+  element3.classList.add("hidden");
+  const element4 = document.getElementById("booking");
+  element4.classList.add("hidden");
+  const element6 = document.getElementById("footer");
+  element6.classList.add("hidden");
+  const element5 = document.getElementById("modal1");
+  element5.classList.remove("hidden");
 }
 
 // continue button function
 
-function Continue(){
-    const element1 = document.getElementById('header');
-    element1.classList.remove('hidden');
-    const element2 = document.getElementById('banner');
-    element2.classList.remove('hidden');
-    const element3 = document.getElementById('offer');
-    element3.classList.remove('hidden');
-    const element4 = document.getElementById('booking');
-    element4.classList.remove('hidden');
-    const element6 = document.getElementById('footer');
-    element6.classList.remove('hidden');
-    const element5 = document.getElementById('modal1');
-    element5.classList.add('hidden');
-    
+function Continue() {
+  const element1 = document.getElementById("header");
+  element1.classList.remove("hidden");
+  const element2 = document.getElementById("banner");
+  element2.classList.remove("hidden");
+  const element3 = document.getElementById("offer");
+  element3.classList.remove("hidden");
+  const element4 = document.getElementById("booking");
+  element4.classList.remove("hidden");
+  const element6 = document.getElementById("footer");
+  element6.classList.remove("hidden");
+  const element5 = document.getElementById("modal1");
+  element5.classList.add("hidden");
 }

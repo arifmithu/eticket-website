@@ -502,6 +502,7 @@
   line-height: 15px;
   letter-spacing: 0px;
   text-align: center;
+  padding: 2px 5px;
 }
 .seat {
   /* display: flex;
@@ -556,7 +557,7 @@
 }
 .coupon-input button {
   border-radius: 8px;
-  background: rgb(29, 209, 0);
+  background: rgba(3, 7, 18, 0.2);
   padding: 11px 15px;
   color: rgb(255, 255, 255);
   font-family: "Inter";

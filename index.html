@@ -395,8 +395,8 @@
                   </div>
                 </div>
                 <div id="coupon-input" class="coupon-input">
-                  <input id="coupon-code" type="text" placeholder="Have any coupon?">
-                  <button onclick="getCouponCode()">Apply</button>
+                  <input oninput="handleCouponCodeChange()" id="coupon-code" type="text" placeholder="Have any coupon?">
+                  <button id="apply-coupon" onclick="getCouponCode()" disabled>Apply</button>
                 </div>
                 <div class="total-amount">
                   <p>Grand Total</p>
