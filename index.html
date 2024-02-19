@@ -20,7 +20,7 @@
   </head>
   <body>
     <!-- navbar section -->
-    <header class="mx-[134px]">
+    <header id="header" class="mx-[134px]">
       <div class="flex items-center justify-between mt-12">
         <div class="">
           <a class="text-4xl font-extrabold">E-Ticket</a>
@@ -46,7 +46,7 @@
     <main>
       <!-- banne section -->
 
-      <div class="banner">
+      <div id="banner" class="banner">
         <div class="banner-header">
           <h1 id="banner-text1">End-to-End Travel with</h1>
           <h1 id="banner-text2" class="paribahan">AHM Paribahan</h1>
@@ -92,7 +92,7 @@
         </section>
       </div>
       <!-- offer section -->
-      <section class="offer-section">
+      <section id="offer" class="offer-section">
         <h1 class="offer-heading">Best offers for you!</h1>
         <div class="offer mx-[134px]">
           <!-- offer 1 -->
@@ -143,7 +143,7 @@
 
       <!-- booking section -->
 
-      <section class="booking-section">
+      <section id="booking" class="booking-section">
         <div class="booking-header">
           <h1>AHM Paribahan</h1>
           <p>
@@ -411,7 +411,7 @@
               <h2>Email Id</h2>
               <input type="email" placeholder="Enter your email id" required>
               </div>
-              <button class="submit">Next</button>
+              <button onclick=" next()" class="submit">Next</button>
               <div class="link">
                 <a href=""> Terms and Conditions</a>
                 <a href="">Cancellation Policy</a>
@@ -420,7 +420,7 @@
           </div>
         </section>
       </section>
-      <section class="hidden  modal1">
+      <section id="modal1" class="hidden modal1">
         <div class="shadow-xl card w-[600px] ">
           <figure class="flex flex-col gap-4 px-10 pt-10">
             <img src="./images/check-removebg-preview.png" alt="ok sign" class="rounded-xl" />
@@ -431,13 +431,13 @@
             <p class="success-description2">We are working hard to provide best service and deals for you.</p>
             <p class="confirmation-email">Shortly you will find a confirmation email.</p>
             <div class="card-actions">
-              <button class="btn">Continue</button>
+              <button onclick="Continue()" class="btn">Continue</button>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer>
+    <footer id="footer">
       <div class="footer-top">
         <div class="left-footer">
           <h1>E-Ticket</h1>

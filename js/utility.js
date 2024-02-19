@@ -115,3 +115,39 @@ function getCouponCode() {
     // inputFieldtElement.classList.add('hidden');
   }
 }
+
+// next button function
+
+function next(){
+    const element1 = document.getElementById('header');
+    element1.classList.add('hidden');
+    const element2 = document.getElementById('banner');
+    element2.classList.add('hidden');
+    const element3 = document.getElementById('offer');
+    element3.classList.add('hidden');
+    const element4 = document.getElementById('booking');
+    element4.classList.add('hidden');
+    const element6 = document.getElementById('footer');
+    element6.classList.add('hidden');
+    const element5 = document.getElementById('modal1');
+    element5.classList.remove('hidden');
+    
+}
+
+// continue button function
+
+function Continue(){
+    const element1 = document.getElementById('header');
+    element1.classList.remove('hidden');
+    const element2 = document.getElementById('banner');
+    element2.classList.remove('hidden');
+    const element3 = document.getElementById('offer');
+    element3.classList.remove('hidden');
+    const element4 = document.getElementById('booking');
+    element4.classList.remove('hidden');
+    const element6 = document.getElementById('footer');
+    element6.classList.remove('hidden');
+    const element5 = document.getElementById('modal1');
+    element5.classList.add('hidden');
+    
+}

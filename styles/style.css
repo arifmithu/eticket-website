@@ -691,6 +691,7 @@ footer {
 .modal1{
   text-align: center;
   margin-left: 350px;
+  margin-top: 20px;
   justify-content: center;
   /* border: 2px solid red; */
 }
