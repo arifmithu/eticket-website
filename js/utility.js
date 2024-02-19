@@ -65,10 +65,10 @@ function seatSelected(elementId) {
     }
   }
   handleCouponCodeChange();
+  handleNextButton()
 }
 // enable apply button
 function handleCouponCodeChange() {
-    console.log('hello')
   const couponInputField = document.getElementById("coupon-code");
   const couponValue = couponInputField.value;
   const seatSelectedElement = document.getElementById("total-seat-selected");
@@ -78,11 +78,26 @@ function handleCouponCodeChange() {
     document.getElementById("apply-coupon").disabled = false;
     const button = document.getElementById('apply-coupon');
     button.style.backgroundColor = 'rgb(29, 209, 0)';
-    console.log(document.getElementById("apply-coupon").disabled)
   } else {
     document.getElementById("apply-coupon").disabled = true;
     document.getElementById('apply-coupon').style.background = 'rgba(3, 7, 18, 0.1)';
-    console.log(document.getElementById("apply-coupon").disabled)
+  }
+}
+
+// enable next button
+function handleNextButton(){
+    const seatSelectedElement = document.getElementById("total-seat-selected");
+  const seatSelected = seatSelectedElement.innerText;
+  const numberOfSeats = parseInt(seatSelected);
+  const numberField = document.getElementById('numberField');
+  const number = numberField.value;
+  if(numberOfSeats > 0 && number != ''){
+    document.getElementById("nextButton").disabled = false;
+    document.getElementById('nextButton').style.backgroundColor = 'rgb(29, 209, 0)';
+  }
+  else{
+    document.getElementById("nextButton").disabled = true;
+    document.getElementById('nextButton').style.backgroundColor = 'rgba(3, 7, 18, 0.2)';
   }
 }
 
@@ -132,16 +147,15 @@ function getCouponCode() {
   } else {
     const discountdiv = document.createElement("div");
     discountdiv.setAttribute("id", "discount");
-    discountdiv.innerHTML = "<p> Discount </p>" + "<p>" + 0 + "</p>";
-    discountdiv.style.display = "flex";
-    discountdiv.style.justifyContent = "space-between";
+    discountdiv.innerHTML = "<p> You have used wrong coupon code.</p>";
     discountdiv.style.marginLeft = "24px";
     discountdiv.style.marginRight = "24px";
     discountdiv.style.fontWeight = "500";
+    discountdiv.style.color = "red";
     const totallNDiscountParentDiv = document.getElementById("toalnDiscount");
     totallNDiscountParentDiv.appendChild(discountdiv);
     const inputFieldtElement = document.getElementById("coupon-input");
-    inputFieldtElement.classList.add('hidden');
+    // inputFieldtElement.classList.add('hidden');
   }
 }
 

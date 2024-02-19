@@ -407,11 +407,11 @@
                 <h2>Passengers Name*</h2>
               <input type="text" placeholder="Enter your name" required>
               <h2>Phone Number*</h2>
-              <input type="number" placeholder="Enter your phone number" required>
+              <input oninput="handleNextButton()" id="numberField" type="number" placeholder="Enter your phone number" required>
               <h2>Email Id</h2>
               <input type="email" placeholder="Enter your email id" required>
               </div>
-              <button onclick=" next()" class="submit">Next</button>
+              <button onclick=" next()" id="nextButton" class="submit" disabled>Next</button>
               <div class="link">
                 <a href=""> Terms and Conditions</a>
                 <a href="">Cancellation Policy</a>
